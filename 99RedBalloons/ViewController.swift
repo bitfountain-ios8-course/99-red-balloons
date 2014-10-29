@@ -12,9 +12,19 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var ballonNameLabel: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
+    
+    var balloons:[Balloon] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let maxBalloons = 99
+        let images = ["RedBalloon1.jpg","RedBalloon2.jpg", "RedBalloon3.jpg", "RedBalloon4.jpg"]
+        for var i = 1; i <= maxBalloons; i++ {
+            var balloon = Balloon()
+            balloon.name = "\(i) balloons"
+            balloon.image = UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!
+            self.balloons += [balloon]
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +33,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func nextButtonPressed(sender: UIBarButtonItem) {
+        let balloon = balloons[Int(arc4random_uniform(UInt32(self.balloons.count)))]
+        self.ballonNameLabel.text = balloon.name
+        self.bgImageView.image = balloon.image
+        
+        self.ballonNameLabel.hidden = false
     }
 }
 

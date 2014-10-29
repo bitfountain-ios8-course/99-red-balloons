@@ -95,7 +95,6 @@
 				ECA12FAF1A0122F700339073 /* Views */,
 				ECA12F811A01201400339073 /* AppDelegate.swift */,
 				ECA12F881A01201400339073 /* Images.xcassets */,
-				ECA12F8A1A01201400339073 /* LaunchScreen.xib */,
 				ECA12F7F1A01201400339073 /* Supporting Files */,
 			);
 			path = 99RedBalloons;
@@ -150,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				ECA12F851A01201400339073 /* Main.storyboard */,
+				ECA12F8A1A01201400339073 /* LaunchScreen.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
