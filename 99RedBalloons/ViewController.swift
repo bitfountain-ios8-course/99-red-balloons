@@ -17,14 +17,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let maxBalloons = 99
-        let images = ["RedBalloon1.jpg","RedBalloon2.jpg", "RedBalloon3.jpg", "RedBalloon4.jpg"]
-        for var i = 1; i <= maxBalloons; i++ {
-            var balloon = Balloon()
-            balloon.name = "\(i) balloons"
-            balloon.image = UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!
-            self.balloons += [balloon]
-        }
+        self.createBallons()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +31,17 @@ class ViewController: UIViewController {
         self.bgImageView.image = balloon.image
         
         self.ballonNameLabel.hidden = false
+    }
+    
+    private func createBallons() {
+        let maxBalloons = 99
+        let images = ["RedBalloon1.jpg","RedBalloon2.jpg", "RedBalloon3.jpg", "RedBalloon4.jpg"]
+        for var i = 1; i <= maxBalloons; i++ {
+            var balloon = Balloon()
+            balloon.name = "\(i) balloons"
+            balloon.image = UIImage(named: images[Int(arc4random_uniform(UInt32(images.count)))])!
+            self.balloons += [balloon]
+        }
     }
 }
 
